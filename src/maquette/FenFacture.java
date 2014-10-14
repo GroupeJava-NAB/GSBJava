@@ -90,6 +90,16 @@ public class FenFacture extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gestion/commande1.png"))); // NOI18N
         jLabel5.setText("Fiche des factures");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
+        jLabel5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jLabel5KeyPressed(evt);
+            }
+        });
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -109,6 +119,16 @@ public class FenFacture extends javax.swing.JFrame {
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gestion/retour.png"))); // NOI18N
         jLabel8.setText("Menu principal");
         jLabel8.setToolTipText("");
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
+        jLabel8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jLabel8KeyPressed(evt);
+            }
+        });
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, -1, -1));
 
         jToggleButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -240,6 +260,38 @@ public class FenFacture extends javax.swing.JFrame {
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        // TODO add your handling code here:
+        FenMenuPrincipal laFenetre = new FenMenuPrincipal();
+        laFenetre.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jLabel8MouseClicked
+
+    private void jLabel8KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabel8KeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == 10) {
+            FenMenuPrincipal laFenetre = new FenMenuPrincipal();
+            laFenetre.setVisible(true);
+            dispose();
+        }
+    }//GEN-LAST:event_jLabel8KeyPressed
+
+    private void jLabel5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabel5KeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == 10) {
+            FenMenuPrincipal laFenetre = new FenMenuPrincipal();
+            laFenetre.setVisible(true);
+            dispose();
+        }
+    }//GEN-LAST:event_jLabel5KeyPressed
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        // TODO add your handling code here:
+        FenTableFacture laFenetre = new FenTableFacture();
+        laFenetre.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jLabel5MouseClicked
 
     /**
      * @param args the command line arguments

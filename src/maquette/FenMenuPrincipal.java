@@ -44,6 +44,11 @@ public class FenMenuPrincipal extends javax.swing.JFrame {
                 jLab_MarcheurMouseClicked(evt);
             }
         });
+        jLab_Marcheur.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jLab_MarcheurKeyPressed(evt);
+            }
+        });
         getContentPane().add(jLab_Marcheur, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, -1, -1));
 
         jLab_parametre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accueil/parametre1.png"))); // NOI18N
@@ -75,6 +80,15 @@ public class FenMenuPrincipal extends javax.swing.JFrame {
         laFenetre.setVisible(true);
         dispose();
     }//GEN-LAST:event_jLab_MarcheurMouseClicked
+
+    private void jLab_MarcheurKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLab_MarcheurKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == 10) {
+            FenMenuPrincipal laFenetre = new FenMenuPrincipal();
+            laFenetre.setVisible(true);
+            dispose();
+        }
+    }//GEN-LAST:event_jLab_MarcheurKeyPressed
 
     /**
      * @param args the command line arguments
