@@ -39,6 +39,11 @@ public class FenMenuPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLab_Marcheur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accueil/marcheur1.png"))); // NOI18N
+        jLab_Marcheur.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLab_MarcheurMouseClicked(evt);
+            }
+        });
         getContentPane().add(jLab_Marcheur, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, -1, -1));
 
         jLab_parametre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accueil/parametre1.png"))); // NOI18N
@@ -63,6 +68,13 @@ public class FenMenuPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLab_MarcheurMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLab_MarcheurMouseClicked
+        // TODO add your handling code here:
+        FenTableClient laFenetre = new FenTableClient();
+        laFenetre.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jLab_MarcheurMouseClicked
 
     /**
      * @param args the command line arguments
