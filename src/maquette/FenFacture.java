@@ -58,21 +58,27 @@ public class FenFacture extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList2 = new javax.swing.JList();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel1.setText("Nom du client");
         jLabel1.setToolTipText("");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("Numéro du document");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 50, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setText("Date du jour");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 50, -1, -1));
 
+        jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -80,54 +86,69 @@ public class FenFacture extends javax.swing.JFrame {
         });
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 70, -1, -1));
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gestion/commande1.png"))); // NOI18N
         jLabel5.setText("Fiche des factures");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gestion/supprimer2.png"))); // NOI18N
         jLabel6.setText("Supprimer une ligne");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gestion/supprimer.png"))); // NOI18N
         jLabel7.setText("Supprimer toutes les lignes");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gestion/retour.png"))); // NOI18N
         jLabel8.setText("Menu principal");
         jLabel8.setToolTipText("");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, -1, -1));
 
+        jToggleButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jToggleButton1.setText("Parcourir les articles");
         getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, -1, -1));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gestion/barre.png"))); // NOI18N
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 790, 40));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 760, 40));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gestion/barre.png"))); // NOI18N
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(261, 107, 780, 40));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 760, 40));
 
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel11.setText("Code");
         jLabel11.setToolTipText("");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, -1, -1));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, -1, -1));
 
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel12.setText("Quantité");
         jLabel12.setToolTipText("");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, -1, -1));
 
-        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, -1, -1));
+        jComboBox2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, -1, -1));
+
+        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, 60, -1));
 
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel13.setText("Désignation");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, -1, -1));
+
+        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 200, 280, -1));
 
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel14.setText("Montant");
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 250, -1, -1));
 
+        jTextField3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField3ActionPerformed(evt);
@@ -135,28 +156,37 @@ public class FenFacture extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, 90, -1));
 
+        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel15.setText("Code catégorie");
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 200, -1, -1));
 
+        jToggleButton2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jToggleButton2.setText("Ajouter");
         getContentPane().add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 260, -1, -1));
 
+        jToggleButton3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jToggleButton3.setText("Modifier");
         getContentPane().add(jToggleButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 260, -1, -1));
+
+        jTextField4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 200, 90, -1));
 
+        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gestion/carte.png"))); // NOI18N
         jLabel16.setText("Mode de règlement");
         getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 520, -1, -1));
 
+        jComboBox3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 520, 70, -1));
 
+        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel18.setText("Total :");
         getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 510, -1, -1));
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gestion/etiquette.png"))); // NOI18N
         getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 500, -1, -1));
 
+        jToggleButton4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jToggleButton4.setText("Valider la facture");
         getContentPane().add(jToggleButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 500, -1, -1));
 
@@ -176,7 +206,7 @@ public class FenFacture extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, 650, 170));
 
-        jList1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jList1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jList1.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "[Cliquez ici pour sélectionner un client ]" };
             public int getSize() { return strings.length; }
@@ -185,7 +215,17 @@ public class FenFacture extends javax.swing.JFrame {
         jList1.setToolTipText("");
         jScrollPane1.setViewportView(jList1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 240, 20));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 250, 30));
+
+        jList2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jList2.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "<User Code>" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(jList2);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 70, -1, 20));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fond/fondGeneral.jpg"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 580));
@@ -259,8 +299,10 @@ public class FenFacture extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JList jList1;
+    private javax.swing.JList jList2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
