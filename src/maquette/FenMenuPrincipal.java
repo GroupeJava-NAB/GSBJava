@@ -1,10 +1,10 @@
-package maquette;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package maquette;
+
 /**
  *
  * @author Poste8
@@ -27,18 +27,39 @@ public class FenMenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLab_Marcheur = new javax.swing.JLabel();
+        jLab_parametre = new javax.swing.JLabel();
+        jLab_Ibook = new javax.swing.JLabel();
+        jLab_classeur = new javax.swing.JLabel();
+        jLab_Cam = new javax.swing.JLabel();
+        jLab_SARL = new javax.swing.JLabel();
+        jLab_Fond = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLab_Marcheur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accueil/marcheur1.png"))); // NOI18N
+        getContentPane().add(jLab_Marcheur, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, -1, -1));
+
+        jLab_parametre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accueil/parametre1.png"))); // NOI18N
+        getContentPane().add(jLab_parametre, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 370, -1, -1));
+
+        jLab_Ibook.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accueil/iBook.png"))); // NOI18N
+        getContentPane().add(jLab_Ibook, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, -1, -1));
+
+        jLab_classeur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accueil/classeur1.png"))); // NOI18N
+        getContentPane().add(jLab_classeur, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 210, -1, -1));
+
+        jLab_Cam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accueil/camembert.png"))); // NOI18N
+        getContentPane().add(jLab_Cam, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, 130, 120));
+
+        jLab_SARL.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLab_SARL.setForeground(new java.awt.Color(224, 224, 224));
+        jLab_SARL.setText("SARL");
+        getContentPane().add(jLab_SARL, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 21, 100, 40));
+
+        jLab_Fond.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fond/fondGeneral.jpg"))); // NOI18N
+        getContentPane().add(jLab_Fond, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 520));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -79,5 +100,12 @@ public class FenMenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLab_Cam;
+    private javax.swing.JLabel jLab_Fond;
+    private javax.swing.JLabel jLab_Ibook;
+    private javax.swing.JLabel jLab_Marcheur;
+    private javax.swing.JLabel jLab_SARL;
+    private javax.swing.JLabel jLab_classeur;
+    private javax.swing.JLabel jLab_parametre;
     // End of variables declaration//GEN-END:variables
 }
