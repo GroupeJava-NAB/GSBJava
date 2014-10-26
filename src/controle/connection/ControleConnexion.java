@@ -7,7 +7,8 @@ package controle.connection;
 
 /**
  *
- * @author Post
+ * @author Utilisateur
  */
-public abstract class ControleConnection {
+public class ControleConnexion {
+    
 }
