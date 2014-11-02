@@ -240,7 +240,7 @@ return lesEnreg;
 }
 
 // Recherche 2
-public ArrayList<Article> chercherCRUD(String recherche) {
+/*public ArrayList<Article> chercherCRUD(String recherche) {
     String requete = "";
     requete += "SELECT * ";
     requete += "FROM articles ";
@@ -272,7 +272,7 @@ return lesEnreg;
 
 
 
-
+*/
 
 
 

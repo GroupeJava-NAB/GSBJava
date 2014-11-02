@@ -22,12 +22,12 @@ private int quantite;
 private double prix_unitaire;
 private double total;  
 
-private static Connection laConnexion = Controleconnexion.getLaConnectionStatique();
+private static Connection laConnexion = ControleConnexion.getLaConnectionStatique();
 private final ArrayList<Facture> lesEnreg = new ArrayList<>();
 
 // Constructeur 1
 
-public LignesFacture(String code_facture, article unArticle, int quantite,
+public LignesFacture(String code_facture, Article unArticle, int quantite,
         double prix_unitaire, double total){   
     this.code_facture = code_facture;
     this.unArticle = unArticle;
