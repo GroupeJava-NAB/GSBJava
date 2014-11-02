@@ -102,6 +102,10 @@ public Article(String code){
         this.date = date;
     }  
 
+    //------------------------------------------------------------------------------
+// CRUD
+//------------------------------------------------------------------------------
+    
 // Lecture de la table entière et récupération des enregistrements
 public void lireRecupCRUD() {
 try {

@@ -117,7 +117,11 @@ public Client(String vNom, String vPrenom){
 nom = vNom;
 prenom = vPrenom;
 
-}  
+} 
+
+//------------------------------------------------------------------------------
+// CRUD
+//------------------------------------------------------------------------------
 
 //Lecture de la table entière et récupération des enregistrements
 private void lireRecupCRUD(){
