@@ -18,6 +18,9 @@ import java.util.ArrayList;
 import java.util.Date;
 // pour les boîtes de dialogue 
 import javax.swing.JOptionPane;
+// Import pour l'ajout de client
+import java.sql.*;
+
 /**
  *
  * @author Utilisateur
@@ -115,4 +118,207 @@ nom = vNom;
 prenom = vPrenom;
 
 }  
+
+//Lecture de la table entière et récupération des enregistrements
+private void lireRecupCRUD(){
+    try{
+        Statement state = laConnexion.createStatement();
+        ResultSet rs = state.executeQuery("SELECT * "
+            + "FROM clients ORDER BY nom");
+        while(rs.next()){
+            String codeJ = rs.getString("code");
+            String nomJ= rs.getString("nom");
+            String prenomJ = rs.getString("prenom");
+            boolean carte_fideleJ = rs.getBoolean("carte_fidele");
+            Date date_creation = rs.getDate("date");
+            lesEnreg.add(new Client(codeJ, nomJ, prenomJ, carte_fideleJ, date_creation));
+        }
+    }catch(SQLException e){
+        JOptionPane.showMessageDialog(null,
+                "Problème rencontré :" +e.getMessage(),
+                "Résultat", JOptionPane.ERROR_MESSAGE);
+    }
+}
+
+//Ajout d'un nouveau client
+public boolean creerCRUD(String vCode, String vNom,
+        String vPrenom, int vCarte_fidele, String vDate){
+    boolean bCreation = false;
+    String requete = null;
+    try {
+        requete = "Insert Into "
+                + "clients VALUES (?,?,?,?,?)";
+        PreparedStatement prepare = laConnexion.prepareStatement(requete);
+        prepare.setString(1, vCode);
+        prepare.setString(2, vNom);
+        prepare.setString(3, vPrenom);
+        prepare.setInt(4, vCarte_fidele);
+        prepare.setString(5, vDate);
+        prepare.executeUpdate();
+        prepare.close();
+        bCreation = true;
+    } catch (SQLException e){
+        JOptionPane.showMessageDialog(null,"Ajout dans la BD non effectué : "
+            +e.getMessage(), "Problème rencontré",
+            JOptionPane.ERROR_MESSAGE);
+    }
+    return bCreation;
+}
+
+// Modification d'un client
+public boolean modifierCRUD(String vCode, String vNom,
+    String vPrenom, int vCarte_fidele, String vDate) {
+    boolean bCreation = false;
+    String requete = null;
+try { 
+    requete = "UPDATE clients SET"
+    + " nom = ?,"
+    + " prenom = ?,"
+    + " carte_fidele = ?, "
+    + " date = ?"
+    + " WHERE code = ?"; 
+    PreparedStatement prepare = 
+    laConnexion.prepareStatement(requete);
+    prepare.setString(1, vNom);
+    prepare.setString(2, vPrenom);
+    prepare.setInt(3, vCarte_fidele);
+    prepare.setString(4, vDate);
+    prepare.setString(5, vCode);
+    prepare.executeUpdate();
+    prepare.close();
+    bCreation = true;
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(null,
+        "Ajout dans la BD non effectué : "
+        + e.getMessage(), "Problème rencontré",
+        JOptionPane.ERROR_MESSAGE);      
+    }
+    return bCreation;
+ }
+
+// Suppressio d'un client
+
+public boolean supprimerCRUD(String vCode) {
+    boolean bSuppression = true;
+    String requete = null;
+// Vérifier avant qu’il n’existe aucune facture
+try {
+    String requeteClient = 
+        "SELECT count(*) AS nbLignes FROM factures "
+        + " WHERE code_client LIKE ’" + vCode + "’";
+    Statement state = laConnexion.createStatement();
+    ResultSet jeuEnreg = state.executeQuery(requeteClient);
+    int nbLignes = 0;
+    jeuEnreg.next();
+    nbLignes = jeuEnreg.getInt("nbLignes");
+    if (nbLignes > 0) {        
+        bSuppression = false;
+        JOptionPane.showMessageDialog(null, 
+        "Il existe des factures pour ce client."
+        + " Suppression interdite.",
+        "Résultat", JOptionPane.ERROR_MESSAGE);
+        bSuppression = false;
+        } else {
+        JOptionPane.showMessageDialog(null, 
+        "Aucune facture pour ce client."
+        + " Suppression autorisée.",
+        "Résultat", JOptionPane.INFORMATION_MESSAGE);
+    }
+} catch (SQLException e) {
+    bSuppression = false;
+    JOptionPane.showMessageDialog(null,
+        "Aucune suppression effectuée dans la BD : "
+        + e.getMessage(),
+        "Problème rencontré",
+        JOptionPane.ERROR_MESSAGE);
+}
+if (bSuppression) {    
+    try {
+        requete = "DELETE FROM clients"
+                + " WHERE Code = ’" + vCode + "’";
+        Statement state = laConnexion.createStatement();        
+        int nbEnregSup = state.executeUpdate(requete);
+        if (nbEnregSup == 0) {
+        JOptionPane.showMessageDialog(null,
+            "Aucun enregistrement correspondant.",
+            "Résultat", JOptionPane.ERROR_MESSAGE);  
+        }
+    } catch (SQLException e) {
+        bSuppression = false;
+        JOptionPane.showMessageDialog(null,            
+            "Aucune suppression effectuée dans la BD : "
+            + e.getMessage(),
+            "Problème rencontré", 
+            JOptionPane.ERROR_MESSAGE);
+    }    
+}
+return bSuppression;
+}
+
+// Recherche 1
+public ArrayList<Client> chercherCRUD(String vCode,
+    String vNom, String vPrenom) {
+if (vCode.equals("")) {
+    vCode = "%";
+}
+if (vNom.equals("")) {
+    vNom = "%";
+}
+if (vPrenom.equals("")) {
+    vPrenom = "%";
+}
+String requete = "SELECT * FROM clients"
+    + " WHERE code LIKE ’" + vCode + "’"
+    + " AND nom LIKE ’" + vNom + "’"
+    + " AND prenom LIKE ’" + vPrenom + "’";
+try {
+    Statement state = laConnexion.createStatement();
+    ResultSet rs = state.executeQuery(requete);
+    while (rs.next()) {
+        String codeJ = rs.getString("code");
+        String nomJ = rs.getString("nom");
+        String prenomJ = rs.getString("prenom");
+        boolean carte_fideleJ = rs.getBoolean("carte_fidele");
+        Date date_creation = rs.getDate("date");
+// ajout à l’Arraylist
+        lesEnreg.add(new Client(codeJ, nomJ,
+            prenomJ, carte_fideleJ, date_creation));
+    }
+} catch (SQLException e) {
+    JOptionPane.showMessageDialog(null, 
+        "Problème rencontré : "
+        + e.getMessage(),
+        "Résultat", 
+        JOptionPane.ERROR_MESSAGE);
+}
+return lesEnreg;
+}
+
+// Recherche 2
+public ArrayList<Client> chercherCRUD(String recherche) {
+String requete = "SELECT * FROM clients"
+    + " WHERE code LIKE ’%" + recherche + "%’"
+    + " OR nom LIKE ’%" + recherche + "%’"
+    + " OR prenom LIKE ’%" + recherche + "%’";
+try {
+    Statement state = laConnexion.createStatement();
+    ResultSet rs = state.executeQuery(requete);
+    while (rs.next()) {
+        String codeJ = rs.getString("code");
+        String nomJ = rs.getString("nom");
+        String prenomJ = rs.getString("prenom");
+        boolean carte_fideleJ = rs.getBoolean("carte_fidele");
+        Date date_creation = rs.getDate("date");
+        lesEnreg.add(new Client(codeJ, nomJ, prenomJ,
+                carte_fideleJ, date_creation));
+    }
+} catch (SQLException e) {
+    JOptionPane.showMessageDialog(null, 
+        "Problème rencontré : "
+        + e.getMessage(),
+        "Résultat", JOptionPane.ERROR_MESSAGE);
+}
+return lesEnreg;
+}
+
 }
