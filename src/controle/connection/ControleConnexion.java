@@ -105,6 +105,34 @@ try {
 }
 }
 
+public static void transfertDonnees() throws SQLException {
+// simple parcours de jeu d’enregistrements
+    System.out.println("Parcours du jeu d’enregistrements");
+    System.out.println("---------------------------------");
+// Interface Statement : pour transmettre des instructions SQL simples
+// la fermeture d’un Statement engendre la fermeture
+// automatique des tous les ResultSet associés 
+    Statement leStatement = null;
+// jeu d’enregistrements
+    ResultSet jeuEnreg = null;
+// variables
+    String vCode = "";
+    String vNom = "";
+    String vPrenom = "";
+    String chaineSQL = "select * from clients";
+    leStatement = (Statement) laConnectionStatique.createStatement();
+    jeuEnreg = leStatement.executeQuery(chaineSQL);
+    while (jeuEnreg.next()) {
+// utilisation des n° de colonnes
+        vCode = jeuEnreg.getString(1);
+        vNom = jeuEnreg.getString(2);
+// ou des noms de colonnes
+        vPrenom = jeuEnreg.getString("prenom");
+        System.out.println(vCode + ", " + vNom
+        + ", " + vPrenom);
+    }
+    leStatement.close();
+}
 
 
 }

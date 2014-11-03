@@ -8,6 +8,9 @@ package dialogue;
 import java.awt.Toolkit;
 import java.awt.Cursor;
 import controle.connection.ControleConnexion;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 /**
  *
@@ -142,17 +145,24 @@ public class FenConnexion extends javax.swing.JFrame {
 
     private void jBtn_ValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_ValiderActionPerformed
         // TODO add your handling code here:
-        FenMenuPrincipal laFenetre = new FenMenuPrincipal();
-        laFenetre.setVisible(true);
-        dispose();
+        try {     
+            ControleConnexion.transfertDonnees();            
+        } catch (SQLException ex) {
+            Logger.getLogger(FenConnexion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            FenMenuPrincipal laFenetre = new FenMenuPrincipal();
+            laFenetre.setVisible(true);
+            dispose();                          
     }//GEN-LAST:event_jBtn_ValiderActionPerformed
 
     private void jBtn_ValiderKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jBtn_ValiderKeyPressed
         // TODO add your handling code here:
         if (evt.getKeyCode() == 10) {
+            if(controleConnexion_Appel()){
             FenMenuPrincipal laFenetre = new FenMenuPrincipal();
             laFenetre.setVisible(true);
             dispose();
+            }
         }
     }//GEN-LAST:event_jBtn_ValiderKeyPressed
 
@@ -209,7 +219,9 @@ public class FenConnexion extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPassword_MDP;
     private javax.swing.JTextField jTxT_Nom;
     // End of variables declaration//GEN-END:variables
-private boolean controleConnexion_Appel() {
+
+    
+    private boolean controleConnexion_Appel() {
 // contrôle de la saisie
     String leNom = jTxT_Nom.getText();
     boolean bControle = false;
