@@ -145,20 +145,27 @@ public class FenConnexion extends javax.swing.JFrame {
 
     private void jBtn_ValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_ValiderActionPerformed
         // TODO add your handling code here:
-        try {     
+        if(controleConnexion_Appel()){
+            try {     
             ControleConnexion.transfertDonnees();            
         } catch (SQLException ex) {
             Logger.getLogger(FenConnexion.class.getName()).log(Level.SEVERE, null, ex);
         }
             FenMenuPrincipal laFenetre = new FenMenuPrincipal();
             laFenetre.setVisible(true);
-            dispose();                          
+            dispose();
+        }
     }//GEN-LAST:event_jBtn_ValiderActionPerformed
 
     private void jBtn_ValiderKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jBtn_ValiderKeyPressed
         // TODO add your handling code here:
         if (evt.getKeyCode() == 10) {
             if(controleConnexion_Appel()){
+                try {
+                    ControleConnexion.transfertDonnees();
+                } catch (SQLException ex) {
+                    Logger.getLogger(FenConnexion.class.getName()).log(Level.SEVERE, null, ex);
+                }
             FenMenuPrincipal laFenetre = new FenMenuPrincipal();
             laFenetre.setVisible(true);
             dispose();

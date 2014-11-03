@@ -3,15 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Git/Java/GSBJava/src/entite/entite.java</file>
-            <file>file:/C:/Git/Java/GSBJava/src/maquette/FenArticle.java</file>
-            <file>file:/C:/Git/Java/GSBJava/src/entite/Categorie.java</file>
-            <file>file:/C:/Git/Java/GSBJava/src/entite/Client.java</file>
-            <file>file:/C:/Git/Java/GSBJava/src/entite/LignesFacture.java</file>
-            <file>file:/C:/Git/Java/GSBJava/src/entite/Article.java</file>
-            <file>file:/C:/Git/Java/GSBJava/src/entite/ModeReglement.java</file>
-            <file>file:/C:/Git/Java/GSBJava/src/entite/Personne.java</file>
-            <file>file:/C:/Git/Java/GSBJava/src/entite/Facture.java</file>
+            <file>file:/C:/Git/GSBJava/GSBJava/src/controle/connection/ControleConnexion.java</file>
+            <file>file:/C:/Git/GSBJava/GSBJava/src/dialogue/FenConnexion.java</file>
+            <file>file:/C:/Git/GSBJava/GSBJava/src/entite/Parametres.java</file>
         </group>
     </open-files>
 </project-private>
