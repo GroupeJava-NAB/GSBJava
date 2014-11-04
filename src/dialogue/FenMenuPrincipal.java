@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package maquette;
+package dialogue;
 
 /**
  *
@@ -44,6 +44,11 @@ public class FenMenuPrincipal extends javax.swing.JFrame {
                 jLab_MarcheurMouseClicked(evt);
             }
         });
+        jLab_Marcheur.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jLab_MarcheurKeyPressed(evt);
+            }
+        });
         getContentPane().add(jLab_Marcheur, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, -1, -1));
 
         jLab_parametre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accueil/parametre1.png"))); // NOI18N
@@ -53,6 +58,16 @@ public class FenMenuPrincipal extends javax.swing.JFrame {
         getContentPane().add(jLab_Ibook, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, -1, -1));
 
         jLab_classeur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accueil/classeur1.png"))); // NOI18N
+        jLab_classeur.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLab_classeurMouseClicked(evt);
+            }
+        });
+        jLab_classeur.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jLab_classeurKeyPressed(evt);
+            }
+        });
         getContentPane().add(jLab_classeur, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 210, -1, -1));
 
         jLab_Cam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accueil/camembert.png"))); // NOI18N
@@ -75,6 +90,31 @@ public class FenMenuPrincipal extends javax.swing.JFrame {
         laFenetre.setVisible(true);
         dispose();
     }//GEN-LAST:event_jLab_MarcheurMouseClicked
+
+    private void jLab_MarcheurKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLab_MarcheurKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == 10) {
+            FenMenuPrincipal laFenetre = new FenMenuPrincipal();
+            laFenetre.setVisible(true);
+            dispose();
+        }
+    }//GEN-LAST:event_jLab_MarcheurKeyPressed
+
+    private void jLab_classeurKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLab_classeurKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == 10) {
+            FenFacture laFenetre = new FenFacture();
+            laFenetre.setVisible(true);
+            dispose();
+        }
+    }//GEN-LAST:event_jLab_classeurKeyPressed
+
+    private void jLab_classeurMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLab_classeurMouseClicked
+        // TODO add your handling code here:
+        FenFacture laFenetre = new FenFacture();
+        laFenetre.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jLab_classeurMouseClicked
 
     /**
      * @param args the command line arguments

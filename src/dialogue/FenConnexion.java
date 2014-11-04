@@ -3,11 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package maquette;
+package dialogue;
 
 import java.awt.Toolkit;
 import java.awt.Cursor;
-
+import controle.connection.ControleConnexion;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Poste8
@@ -39,8 +43,8 @@ public class FenConnexion extends javax.swing.JFrame {
 
         jBtn_Quitter = new javax.swing.JButton();
         jBtn_Valider = new javax.swing.JButton();
-        jPassword_MPD = new javax.swing.JPasswordField();
-        jTxt_Nom = new javax.swing.JTextField();
+        jPassword_MDP = new javax.swing.JPasswordField();
+        jTxT_Nom = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabe_MDP = new javax.swing.JLabel();
         jLab_Nom = new javax.swing.JLabel();
@@ -81,21 +85,21 @@ public class FenConnexion extends javax.swing.JFrame {
         });
         getContentPane().add(jBtn_Valider, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, -1, -1));
 
-        jPassword_MPD.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPassword_MPD.addActionListener(new java.awt.event.ActionListener() {
+        jPassword_MDP.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPassword_MDP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPassword_MPDActionPerformed(evt);
+                jPassword_MDPActionPerformed(evt);
             }
         });
-        getContentPane().add(jPassword_MPD, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 140, 30));
+        getContentPane().add(jPassword_MDP, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 140, 30));
 
-        jTxt_Nom.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jTxt_Nom.addActionListener(new java.awt.event.ActionListener() {
+        jTxT_Nom.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTxT_Nom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTxt_NomActionPerformed(evt);
+                jTxT_NomActionPerformed(evt);
             }
         });
-        getContentPane().add(jTxt_Nom, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 140, 30));
+        getContentPane().add(jTxT_Nom, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 140, 30));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/connection/switch-on.png"))); // NOI18N
@@ -126,32 +130,39 @@ public class FenConnexion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTxt_NomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxt_NomActionPerformed
+    private void jTxT_NomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxT_NomActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTxt_NomActionPerformed
+    }//GEN-LAST:event_jTxT_NomActionPerformed
 
     private void jBtn_QuitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_QuitterActionPerformed
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jBtn_QuitterActionPerformed
 
-    private void jPassword_MPDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPassword_MPDActionPerformed
+    private void jPassword_MDPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPassword_MDPActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPassword_MPDActionPerformed
+    }//GEN-LAST:event_jPassword_MDPActionPerformed
 
     private void jBtn_ValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_ValiderActionPerformed
         // TODO add your handling code here:
-        FenMenuPrincipal laFenetre = new FenMenuPrincipal();
-        laFenetre.setVisible(true);
-        dispose();
+        try {     
+            ControleConnexion.transfertDonnees();            
+        } catch (SQLException ex) {
+            Logger.getLogger(FenConnexion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            FenMenuPrincipal laFenetre = new FenMenuPrincipal();
+            laFenetre.setVisible(true);
+            dispose();                          
     }//GEN-LAST:event_jBtn_ValiderActionPerformed
 
     private void jBtn_ValiderKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jBtn_ValiderKeyPressed
         // TODO add your handling code here:
         if (evt.getKeyCode() == 10) {
+            if(controleConnexion_Appel()){
             FenMenuPrincipal laFenetre = new FenMenuPrincipal();
             laFenetre.setVisible(true);
             dispose();
+            }
         }
     }//GEN-LAST:event_jBtn_ValiderKeyPressed
 
@@ -205,7 +216,32 @@ public class FenConnexion extends javax.swing.JFrame {
     private javax.swing.JLabel jLab_Nom;
     private javax.swing.JLabel jLabe_MDP;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPasswordField jPassword_MPD;
-    private javax.swing.JTextField jTxt_Nom;
+    private javax.swing.JPasswordField jPassword_MDP;
+    private javax.swing.JTextField jTxT_Nom;
     // End of variables declaration//GEN-END:variables
+
+    
+    private boolean controleConnexion_Appel() {
+// contrôle de la saisie
+    String leNom = jTxT_Nom.getText();
+    boolean bControle = false;
+    String leMotDePasse = String.valueOf(jPassword_MDP.getPassword());
+    if (ControleConnexion.controle(leNom, leMotDePasse)) {
+        if (ControleConnexion.isEtatConnexion()) {
+        } else {       
+        bControle = true;
+        JOptionPane.showMessageDialog(null,
+            "Impossible de se connecter."
+            + " à la base de données ’\n\n’"
+            + "Vos nom et mot de passe sont corrects.\n"
+            + "Mais les paramètres pour le pilote"
+            + " et la base de données "
+            + "doivent être vérifiés. ’\n’"
+            + "Contactez le responsable informatique.",
+            "ALERTE", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+return bControle;
+}
+
 }
