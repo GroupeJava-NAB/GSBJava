@@ -49,9 +49,9 @@ public class Parametres {
 
     public Parametres() {
         nomUtilisateur = "root";
-        motDePasse = "tempo";
-        driverSGBD = "org.gjt.mm.mysql.Driver";
-        serveurBD = "jdbc:mysql://localhost/FacturationGSB";
+        motDePasse = "root";
+        driverSGBD = "com.mysql.jdbc.Driver";
+        serveurBD = "jdbc:mysql://localhost:3306/gsb?zeroDateTimeBehavior=convertToNull";
     }
     
     
