@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package maquette;
+package dialogue;
 
 /**
  *
@@ -74,6 +74,16 @@ public class FenTableClient extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gestion/ajouter.png"))); // NOI18N
         jLabel3.setText("Ajouter");
         jLabel3.setName("ajouter"); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        jLabel3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jLabel3KeyPressed(evt);
+            }
+        });
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, 40));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -110,6 +120,16 @@ public class FenTableClient extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gestion/retour.png"))); // NOI18N
         jLabel10.setText("Menu Principal");
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel10MouseClicked(evt);
+            }
+        });
+        jLabel10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jLabel10KeyPressed(evt);
+            }
+        });
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -283,6 +303,38 @@ public class FenTableClient extends javax.swing.JFrame {
     private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField8ActionPerformed
+
+    private void jLabel10KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabel10KeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == 10) {
+            FenMenuPrincipal laFenetre = new FenMenuPrincipal();
+            laFenetre.setVisible(true);
+            dispose();
+        }
+    }//GEN-LAST:event_jLabel10KeyPressed
+
+    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+        // TODO add your handling code here:
+        FenMenuPrincipal laFenetre = new FenMenuPrincipal();
+        laFenetre.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jLabel10MouseClicked
+
+    private void jLabel3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabel3KeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == 10) {
+            FenFicheClient laFenetre = new FenFicheClient();
+            laFenetre.setVisible(true);
+            dispose();
+        }
+    }//GEN-LAST:event_jLabel3KeyPressed
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        // TODO add your handling code here:
+        FenFicheClient laFenetre = new FenFicheClient();
+        laFenetre.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jLabel3MouseClicked
 
     /**
      * @param args the command line arguments
