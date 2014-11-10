@@ -5,6 +5,10 @@
  */
 package dialogue;
 
+import dialogue.FenTableFacture;
+import dialogue.FenMenuPrincipal;
+import dialogue.FenFacture;
+
 /**
  *
  * @author Post

@@ -5,6 +5,9 @@
  */
 package dialogue;
 
+import dialogue.FenArticle;
+import dialogue.FenMenuPrincipal;
+
 /**
  *
  * @author Thomas

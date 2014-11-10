@@ -5,6 +5,10 @@
  */
 package dialogue;
 
+import dialogue.FenTableClient;
+import dialogue.FenFicheClient;
+import dialogue.FenMenuPrincipal;
+
 /**
  *
  * @author Thomas
