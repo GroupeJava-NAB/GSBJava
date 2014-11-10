@@ -1,41 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package entite;
+
 import controle.connection.ControleConnexion;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
-/**
- *
- * @author Utilisateur
- */
+import javax.swing.JOptionPane;
+
 public class ModeReglement {
-private int code;
-private String type;
-private static Connection laConnexion = ControleConnexion.getLaConnectionStatique();
-private final ArrayList<ModeReglement> lesEnreg = new ArrayList<>();
+    private int code;
+    private String type;
+    private static Connection laConnexion =
+            ControleConnexion.getLaConnectionStatique();
+    private final ArrayList<ModeReglement> lesEnreg =
+            new ArrayList<>();
 
-// Contructeur 1
-public ModeReglement(){
-    // à activer dès création de la méthode
-    // lireRecupCRUD();    
-}
-
-// Contructeur 2
-public ModeReglement(int code, String type){
-    this.code = code;
-    this.type = type;
-}
-
-//Constructeur 3
-// Pour la gestion des factures
-public ModeReglement(String vType){
-    type = vType;
-}
-
-//Getteur/Setter
+    public ModeReglement() {
+        lireRecupCRUD();
+    }
+    public ModeReglement(int code, String type) {
+        this.code = code;
+        this.type = type;
+    }
+    public ModeReglement(String vType) {
+        type = vType;
+    }
 
     public int getCode() {
         return code;
@@ -48,12 +37,25 @@ public ModeReglement(String vType){
     public ArrayList<ModeReglement> getLesEnreg() {
         return lesEnreg;
     }
-
     public void setCode(int code) {
         this.code = code;
     }
-
     public void setType(String type) {
         this.type = type;
+    }
+    
+    public void lireRecupCRUD() {
+        try {
+            Statement state = laConnexion.createStatement();
+            ResultSet rs = state.executeQuery("SELECT * FROM mode_reglements");
+            while (rs.next()) {
+                int code = rs.getInt("code");
+                String type = rs.getString("type");
+                lesEnreg.add(new ModeReglement(code, type));
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Une erreur est survenue lors de la lecture : \n" 
+                    + e.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
+        }
     }
 }

@@ -5,6 +5,8 @@
  */
 package dialogue;
 
+import dialogue.FenMenuPrincipal;
+import dialogue.FenConnexion;
 import java.awt.Toolkit;
 import java.awt.Cursor;
 import controle.connection.ControleConnexion;

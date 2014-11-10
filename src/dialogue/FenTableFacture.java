@@ -5,6 +5,9 @@
  */
 package dialogue;
 
+import dialogue.FenTableFacture;
+import dialogue.FenFacture;
+
 /**
  *
  * @author Post
