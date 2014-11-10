@@ -144,21 +144,34 @@ public class FenConnexion extends javax.swing.JFrame {
     }//GEN-LAST:event_jPassword_MDPActionPerformed
 
     private void jBtn_ValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_ValiderActionPerformed
-        // TODO add your handling code here:
-        try {     
-            ControleConnexion.transfertDonnees();            
+        // TODO add your handling code here:        
+        if(controleConnexion_Appel()){
+            try {
+            ControleConnexion.transfertDonnees();  
+            
         } catch (SQLException ex) {
             Logger.getLogger(FenConnexion.class.getName()).log(Level.SEVERE, null, ex);
         }
             FenMenuPrincipal laFenetre = new FenMenuPrincipal();
             laFenetre.setVisible(true);
-            dispose();                          
+            dispose();
+        }
+        else{
+            JOptionPane.showMessageDialog(null,        
+                "Salut");
+        }
+        
     }//GEN-LAST:event_jBtn_ValiderActionPerformed
 
     private void jBtn_ValiderKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jBtn_ValiderKeyPressed
         // TODO add your handling code here:
         if (evt.getKeyCode() == 10) {
             if(controleConnexion_Appel()){
+                try {
+                    ControleConnexion.transfertDonnees();
+                } catch (SQLException ex) {
+                    Logger.getLogger(FenConnexion.class.getName()).log(Level.SEVERE, null, ex);
+                }
             FenMenuPrincipal laFenetre = new FenMenuPrincipal();
             laFenetre.setVisible(true);
             dispose();
@@ -227,9 +240,9 @@ public class FenConnexion extends javax.swing.JFrame {
     boolean bControle = false;
     String leMotDePasse = String.valueOf(jPassword_MDP.getPassword());
     if (ControleConnexion.controle(leNom, leMotDePasse)) {
-        if (ControleConnexion.isEtatConnexion()) {
-        } else {       
+        if (ControleConnexion.isEtatConnexion()) {            
         bControle = true;
+        } else {       
         JOptionPane.showMessageDialog(null,
             "Impossible de se connecter."
             + " à la base de données ’\n\n’"
