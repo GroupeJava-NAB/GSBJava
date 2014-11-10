@@ -3,27 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <file>file:/C:/Users/Poste8/Desktop/Java-tp/GSBJava/src/maquette/FenTableFacture.java</file>
-            <file>file:/C:/Users/Poste8/Desktop/Java-tp/GSBJava/src/maquette/FenMenuPrincipal.java</file>
-            <file>file:/C:/Users/Poste8/Desktop/Java-tp/GSBJava/src/maquette/FenConnexion.java</file>
-=======
-            <file>file:/C:/Git/Java/GSBJava/src/entite/entite.java</file>
-            <file>file:/C:/Git/Java/GSBJava/src/maquette/FenArticle.java</file>
-            <file>file:/C:/Git/Java/GSBJava/src/entite/Categorie.java</file>
-            <file>file:/C:/Git/Java/GSBJava/src/entite/Client.java</file>
-            <file>file:/C:/Git/Java/GSBJava/src/entite/LignesFacture.java</file>
-            <file>file:/C:/Git/Java/GSBJava/src/entite/Article.java</file>
-            <file>file:/C:/Git/Java/GSBJava/src/entite/ModeReglement.java</file>
-            <file>file:/C:/Git/Java/GSBJava/src/entite/Personne.java</file>
-            <file>file:/C:/Git/Java/GSBJava/src/entite/Facture.java</file>
->>>>>>> 4b6066280b68037c43169c4d97d1dfc1b6aa661c
-=======
-            <file>file:/C:/Git/GSBJava/GSBJava/src/controle/connection/ControleConnexion.java</file>
-            <file>file:/C:/Git/GSBJava/GSBJava/src/dialogue/FenConnexion.java</file>
-            <file>file:/C:/Git/GSBJava/GSBJava/src/entite/Parametres.java</file>
->>>>>>> 6af9599084556656176e40cc58923719390d1808
+            <file>file:/C:/Users/Thomas/Desktop/java_tp/GSBJava/src/dialogue/FenConnexion.java</file>
         </group>
     </open-files>
 </project-private>
