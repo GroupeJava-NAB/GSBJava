@@ -1,6 +1,6 @@
 package dialogue;
 
-//import controle.etat.JasperMySQL_Parametres;
+// import controle.etat.JasperMySQL_Parametres;
 import controle.modele.ModeleFacture;
 import entite.Facture;
 import java.text.DecimalFormat;
@@ -188,8 +188,8 @@ public class FenTableFacture extends javax.swing.JFrame {
                     "Vous devez sélectionner"
                     + " une facture pour afficher l'aperçu.");
         } else {
-            JasperMySQL_Parametres.setCode_facture(code_facture);
-            JasperMySQL_Parametres.apercu("Facture.jrxml");
+            //JasperMySQL_Parametres.setCode_facture(code_facture);
+            //JasperMySQL_Parametres.apercu("Facture.jrxml");
         }
     }//GEN-LAST:event_jLab_AperçuMouseClicked
 
@@ -199,8 +199,8 @@ public class FenTableFacture extends javax.swing.JFrame {
                     "Vous devez sélectionner "
                     + "une facture pour l'imprimer");
         } else {
-            JasperMySQL_Parametres.setCode_facture(code_facture);
-            JasperMySQL_Parametres.imprimer("Facture.jrxml");
+           //JasperMySQL_Parametres.setCode_facture(code_facture);
+           //JasperMySQL_Parametres.imprimer("Facture.jrxml");
         }
     }//GEN-LAST:event_jLab_ImprimerMouseClicked
 
