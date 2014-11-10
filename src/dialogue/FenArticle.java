@@ -1,4 +1,5 @@
 package dialogue;
+
  // code commenté
 //import controle.etat.JasperMySQL_Parametres;
 import controle.modele.ModeleArticle;
@@ -402,8 +403,10 @@ public class FenArticle extends javax.swing.JFrame {
     }//GEN-LAST:event_jTXt_RechercheKeyReleased
 
     private void jLab_AperçuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLab_AperçuMouseClicked
+
  // code commenté
 //        JasperMySQL_Parametres.apercu("Articles.jrxml");
+
     }//GEN-LAST:event_jLab_AperçuMouseClicked
 
     public static void main(String args[]) {

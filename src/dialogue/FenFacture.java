@@ -1,5 +1,6 @@
 package dialogue;
 
+
 import controle.modele.ModeleLigneFacture;
 import entite.*;
 import java.text.DecimalFormat;
