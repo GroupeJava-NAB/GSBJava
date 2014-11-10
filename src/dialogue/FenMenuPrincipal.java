@@ -1,23 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dialogue;
 
-import dialogue.FenTableClient;
-import dialogue.FenMenuPrincipal;
-import dialogue.FenFacture;
-
-/**
- *
- * @author Poste8
- */
 public class FenMenuPrincipal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FenMenuPrincipal
-     */
     public FenMenuPrincipal() {
         initComponents();
     }
@@ -31,103 +15,119 @@ public class FenMenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLab_Marcheur = new javax.swing.JLabel();
-        jLab_parametre = new javax.swing.JLabel();
-        jLab_Ibook = new javax.swing.JLabel();
-        jLab_classeur = new javax.swing.JLabel();
-        jLab_Cam = new javax.swing.JLabel();
-        jLab_SARL = new javax.swing.JLabel();
-        jLab_Fond = new javax.swing.JLabel();
+        jLab_Quitter = new javax.swing.JLabel();
+        jLab_Titre = new javax.swing.JLabel();
+        jLab_Client = new javax.swing.JLabel();
+        jLab_Article = new javax.swing.JLabel();
+        jLab_TableauxBord = new javax.swing.JLabel();
+        jLab_parametres = new javax.swing.JLabel();
+        jLab_Facture = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLab_Marcheur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accueil/marcheur1.png"))); // NOI18N
-        jLab_Marcheur.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLab_Quitter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accueil/quitter1.png"))); // NOI18N
+        jLab_Quitter.setToolTipText("");
+        jLab_Quitter.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLab_MarcheurMouseClicked(evt);
+                jLab_QuitterMouseClicked(evt);
             }
         });
-        jLab_Marcheur.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jLab_MarcheurKeyPressed(evt);
-            }
-        });
-        getContentPane().add(jLab_Marcheur, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, -1, -1));
+        getContentPane().add(jLab_Quitter, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 165, 52));
 
-        jLab_parametre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accueil/parametre1.png"))); // NOI18N
-        getContentPane().add(jLab_parametre, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 370, -1, -1));
+        jLab_Titre.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        jLab_Titre.setForeground(new java.awt.Color(204, 204, 255));
+        jLab_Titre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo gsb.jpg"))); // NOI18N
+        jLab_Titre.setToolTipText("");
+        getContentPane().add(jLab_Titre, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 170));
 
-        jLab_Ibook.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accueil/iBook.png"))); // NOI18N
-        getContentPane().add(jLab_Ibook, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, -1, -1));
-
-        jLab_classeur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accueil/classeur1.png"))); // NOI18N
-        jLab_classeur.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLab_Client.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accueil/marcheur1.png"))); // NOI18N
+        jLab_Client.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLab_classeurMouseClicked(evt);
+                jLab_ClientMouseClicked(evt);
             }
         });
-        jLab_classeur.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jLab_classeurKeyPressed(evt);
+        getContentPane().add(jLab_Client, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, -1, -1));
+
+        jLab_Article.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accueil/powerBook.png"))); // NOI18N
+        jLab_Article.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLab_ArticleMouseClicked(evt);
             }
         });
-        getContentPane().add(jLab_classeur, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 210, -1, -1));
+        getContentPane().add(jLab_Article, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 40, -1, -1));
 
-        jLab_Cam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accueil/camembert.png"))); // NOI18N
-        getContentPane().add(jLab_Cam, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, 130, 120));
+        jLab_TableauxBord.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accueil/camembert.png"))); // NOI18N
+        jLab_TableauxBord.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLab_TableauxBordMouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLab_TableauxBord, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 230, -1, -1));
 
-        jLab_SARL.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLab_SARL.setForeground(new java.awt.Color(224, 224, 224));
-        jLab_SARL.setText("SARL");
-        getContentPane().add(jLab_SARL, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 21, 100, 40));
+        jLab_parametres.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accueil/parametre1.png"))); // NOI18N
+        getContentPane().add(jLab_parametres, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 420, -1, -1));
 
-        jLab_Fond.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fond/fondGeneral.jpg"))); // NOI18N
-        getContentPane().add(jLab_Fond, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 520));
+        jLab_Facture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accueil/classeur1.png"))); // NOI18N
+        jLab_Facture.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLab_FactureMouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLab_Facture, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 240, -1, -1));
 
-        pack();
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fond/fond.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 580));
+
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, -1, -1));
+
+        setSize(new java.awt.Dimension(948, 630));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLab_MarcheurMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLab_MarcheurMouseClicked
-        // TODO add your handling code here:
+    private void jLab_QuitterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLab_QuitterMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_jLab_QuitterMouseClicked
+
+    private void jLab_ClientMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLab_ClientMouseClicked
         FenTableClient laFenetre = new FenTableClient();
         laFenetre.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jLab_MarcheurMouseClicked
+    }//GEN-LAST:event_jLab_ClientMouseClicked
 
-    private void jLab_MarcheurKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLab_MarcheurKeyPressed
-        // TODO add your handling code here:
-        if (evt.getKeyCode() == 10) {
-            FenMenuPrincipal laFenetre = new FenMenuPrincipal();
-            laFenetre.setVisible(true);
-            dispose();
-        }
-    }//GEN-LAST:event_jLab_MarcheurKeyPressed
+    private void jLab_ArticleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLab_ArticleMouseClicked
+        FenArticle laFenetre = new FenArticle();
+        laFenetre.setVisible(true);
 
-    private void jLab_classeurKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLab_classeurKeyPressed
-        // TODO add your handling code here:
-        if (evt.getKeyCode() == 10) {
-            FenFacture laFenetre = new FenFacture();
-            laFenetre.setVisible(true);
-            dispose();
-        }
-    }//GEN-LAST:event_jLab_classeurKeyPressed
+    }//GEN-LAST:event_jLab_ArticleMouseClicked
 
-    private void jLab_classeurMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLab_classeurMouseClicked
-        // TODO add your handling code here:
+    private void jLab_FactureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLab_FactureMouseClicked
         FenFacture laFenetre = new FenFacture();
         laFenetre.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jLab_classeurMouseClicked
+    }//GEN-LAST:event_jLab_FactureMouseClicked
+
+    private void jLab_TableauxBordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLab_TableauxBordMouseClicked
+        FenTableauBord tableau = new FenTableauBord(this, rootPaneCheckingEnabled);
+        tableau.setModal(true);
+        tableau.setLocationRelativeTo(tableau.getParent());
+        tableau.setVisible(true);
+    }//GEN-LAST:event_jLab_TableauxBordMouseClicked
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+        /*
+         * Set the Nimbus look and feel
+         */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+        /*
+         * If Nimbus (introduced in Java SE 6) is not available, stay with the
+         * default look and feel. For details see
+         * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -147,21 +147,25 @@ public class FenMenuPrincipal extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        /*
+         * Create and display the form
+         */
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new FenMenuPrincipal().setVisible(true);
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLab_Cam;
-    private javax.swing.JLabel jLab_Fond;
-    private javax.swing.JLabel jLab_Ibook;
-    private javax.swing.JLabel jLab_Marcheur;
-    private javax.swing.JLabel jLab_SARL;
-    private javax.swing.JLabel jLab_classeur;
-    private javax.swing.JLabel jLab_parametre;
+    private javax.swing.JLabel jLab_Article;
+    private javax.swing.JLabel jLab_Client;
+    private javax.swing.JLabel jLab_Facture;
+    private javax.swing.JLabel jLab_Quitter;
+    private javax.swing.JLabel jLab_TableauxBord;
+    private javax.swing.JLabel jLab_Titre;
+    private javax.swing.JLabel jLab_parametres;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

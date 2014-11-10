@@ -11,7 +11,7 @@ public class Parametres {
         nomUtilisateur = "root";
         motDePasse = "tempo";
         driverSGBD = "org.gjt.mm.mysql.Driver";
-        serveurBD = "jdbc:mysql://localhost/gsb";
+        serveurBD = "jdbc:mysql://localhost/xelfi";
     }
 
     public String getDriverSGBD() {
