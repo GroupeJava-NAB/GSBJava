@@ -10,8 +10,8 @@ public class Parametres {
     public Parametres() {
         nomUtilisateur = "root";
         motDePasse = "tempo";
-        driverSGBD = "org.gjt.mm.mysql.Driver";
-        serveurBD = "jdbc:mysql://localhost/xelfi";
+        driverSGBD = "com.mysql.jdbc.Driver";
+        serveurBD = "jdbc:mysql://localhost:3306/gsb?zeroDateTimeBehavior=convertToNull";
     }
 
     public String getDriverSGBD() {
