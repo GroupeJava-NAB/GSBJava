@@ -1,67 +1,48 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package entite;
+
 import controle.connection.ControleConnexion;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Utilisateur
- */
-
 public class Article {
-    
     private String code;
     private String code_categorie;
     private String designation;
     private int quantite;
     private double prix_unitaire;
     private Date date;
-    
-    private static Connection laConnexion = ControleConnexion.getLaConnectionStatique();
+    private static Connection laConnexion =
+            ControleConnexion.getLaConnectionStatique();
     private ArrayList<Article> lesEnreg = new ArrayList<>();
-    
-    // Constructeur 1
-public Article (String code, String code_caegorie, String designation, int quantite
-, double prix_unitaie, Date date){
-    this.code = code;
-    this.code_categorie = code_categorie;
-    this.designation = designation;
-    this.quantite = quantite;
-    this.prix_unitaire = prix_unitaire;
-    this.date = date;    
-}
 
-    // Constructeur 2
-public Article(){
-    // à activer dès création de la métode
-    // lireRecupCRUD();
-}
-    
-    //Contructeur 3
-public Article(String code){
-    this.code = code;    
-}
+    public Article(String code, String code_categorie,
+            String designation, int quantite,
+            double prix_unitaire, Date date) {
+        this.code = code;
+        this.code_categorie = code_categorie;
+        this.designation = designation;
+        this.quantite = quantite;
+        this.prix_unitaire = prix_unitaire;
+        this.date = date;
+    }
+    public Article() {
+        lireRecupCRUD();
+    }
+    public Article(String code) {
+        this.code = code;
+    }
 
-    // Getter/Setter
     public String getCode() {
         return code;
     }
-
-    public String getCodecategorie() {
+    public String getCodeCategorie() {
         return code_categorie;
     }
-
     public String getDesignation() {
         return designation;
     }
-
     public int getQuantite() {
         return quantite;
     }
@@ -69,11 +50,9 @@ public Article(String code){
     public double getPrix_unitaire() {
         return prix_unitaire;
     }
-
     public Date getDate() {
         return date;
     }
-
     public ArrayList<Article> getLesEnreg() {
         return lesEnreg;
     }
@@ -81,199 +60,151 @@ public Article(String code){
     public void setCode(String code) {
         this.code = code;
     }
-
     public void setReference(String code_categorie) {
         this.code_categorie = code_categorie;
     }
-
     public void setDesignation(String designation) {
         this.designation = designation;
     }
-
     public void setQuantite(int quantite) {
         this.quantite = quantite;
     }
-
     public void setPrix_unitaire(double prix_unitaire) {
         this.prix_unitaire = prix_unitaire;
     }
-
     public void setDate(Date date) {
         this.date = date;
-    }  
-
-    //------------------------------------------------------------------------------
-// CRUD
-//------------------------------------------------------------------------------
-    
-// Lecture de la table entière et récupération des enregistrements
-public void lireRecupCRUD() {
-try {
-    Statement state = laConnexion.createStatement();
-    ResultSet rs = state.executeQuery
-    ("SELECT * FROM articles");
-    while (rs.next()) {
-        String code = rs.getString("code");
-        String code_categorie = rs.getString("code_categorie");
-        String designation = rs.getString("designation");
-        int quantite = rs.getInt("quantite");
-        double prix_unitaire = rs.getDouble("prix_unitaire");
-        Date date_creation = rs.getDate("date");
-        lesEnreg.add(new Article(code, code_categorie, 
-                designation,quantite, prix_unitaire, date_creation));
     }
-} catch (SQLException e) {
-    JOptionPane.showMessageDialog(null,         
-        "Problème rencontré : "
-        + e.getMessage(),
-        "Résultat", JOptionPane.ERROR_MESSAGE);
-}
-}
-
-// Ajout d'un nouvel article
-public boolean creerCRUD(String vCode, String vReference,
-    String vDesignation, int vQuantite, double vPu, String vDate) {
-    boolean bCreation = false;
-    String requete = null; 
-try {
-    requete = "INSERT INTO articles VALUES (?,?,?,?,?,NOW())";
-    PreparedStatement prepare = laConnexion.prepareStatement(requete);
-    prepare.setString(1, vCode);
-    prepare.setString(2, vReference);
-    prepare.setString(3, vDesignation);
-    prepare.setInt (4, vQuantite);
-    prepare.setDouble(5, vPu);
-    prepare.executeUpdate();
-    bCreation = true;
-    } 
-    catch (SQLException e){
-JOptionPane.showMessageDialog(null,
-    "Ajout dans la BD non effectué : " 
-    + e.getMessage(), "Problème rencontré", 
-    JOptionPane.ERROR_MESSAGE);
-}
-return bCreation; 
-}
-
-//Modification d'un article
-public boolean modifierCRUD(String vCode, String vReference,
-        String vDesignation, int vQuantite, double vPu) {
-    boolean bModification = true; 
-    String requete = null; 
-try {
-    requete = "UPDATE articles SET " +
-            "code_categorie = ?, " +
-            "designation = ?, " +
-            "quantite = ?, " +
-            "prix_unitaire = ? " +
-            "WHERE code = ?";
-    PreparedStatement prepare = laConnexion.prepareStatement(requete);
-    prepare.setString(1, vReference);
-    prepare.setString(2, vDesignation);
-    prepare.setInt (3, vQuantite);
-    prepare.setDouble(4, vPu);
-    prepare.setString(5, vCode);
-    prepare.executeUpdate();
-    bModification = true;
-} 
-catch (SQLException e) {
-    bModification = false;
-    JOptionPane.showMessageDialog(null, 
-        "Modification dans la BD non effectuée : "
-        + e.getMessage(), 
-        "Problème rencontré", JOptionPane.ERROR_MESSAGE);
-}
-return bModification;
-}
-
-// Suppression d'un article
-public boolean supprimerCRUD(String vCode){
-    boolean bSuppression = true; 
-    String requete = null; 
-try { 
-    requete = "DELETE FROM articles WHERE code = ?";
-    PreparedStatement prepare =           
-        laConnexion.prepareStatement(requete);
-    prepare.setString(1, vCode);
-    int nbEnregSup = prepare.executeUpdate();
-    if (nbEnregSup == 0){        
-    JOptionPane.showMessageDialog(null,
-        "Aucune suppression effectuée dans la BD.",
-        "Problème rencontré", JOptionPane.ERROR_MESSAGE); 
+    private void lireRecupCRUD() {
+        try {
+            Statement state = laConnexion.createStatement();
+            ResultSet rs = state.executeQuery("SELECT * FROM articles");
+            while (rs.next()) {
+                String code = rs.getString("code");
+                String code_categorie = rs.getString("code_categorie");
+                String designation = rs.getString("designation");
+                int quantite = rs.getInt("quantite");
+                double prix_unitaire = rs.getDouble("prix_unitaire");
+                Date date_creation = rs.getDate("date");
+                lesEnreg.add(new Article(code, code_categorie, designation, 
+                        quantite, prix_unitaire, date_creation));
+            }
+        } catch (SQLException e) {
+            System.out.println("problème avec recupEnregBD()");
+        }
     }
-} catch (SQLException e){
-    bSuppression = false;
-    JOptionPane.showMessageDialog(null, 
-        "Aucune suppression effectuée dans la BD.", 
-        "Problème rencontré", JOptionPane.ERROR_MESSAGE);
-}
-return bSuppression;
-}
-
-// Recherche 1
-public ArrayList<Article> chercherCRUD(String recherche) {
-    String requete = "";
-    requete += "SELECT * ";
-    requete += "FROM articles ";
-    requete += "WHERE code LIKE ’%" + recherche + "%’ ";
-    requete += "OR code_categorie LIKE ’%" + recherche + "%’ ";
-    requete += "OR designation LIKE ’%" + recherche + "%’ ";
-try {
-    Statement state = laConnexion.createStatement();
-    ResultSet rs = state.executeQuery(requete);
-    while (rs.next()) {
-        String code = rs.getString("code");
-        String code_categorie = rs.getString("code_categorie");
-        String designation = rs.getString("designation");
-        int quantite = rs.getInt("quantite");
-        double prix_unitaire = rs.getDouble("prix_unitaire");
-        Date date_creation = rs.getDate("date");    
-        lesEnreg.add(new Article(code, code_categorie,
-                designation, quantite, prix_unitaire, date_creation)); 
+    public boolean creerCRUD(String vCode, String vReference, 
+            String vDesignation, int vQuantite, double vPu, String vDate) {
+        boolean bCreation = false;
+        String requete = null;
+        try {
+            requete = "INSERT INTO articles VALUES (?,?,?,?,?,NOW())";
+            PreparedStatement prepare = laConnexion.prepareStatement(requete);
+            prepare.setString(1, vCode);
+            prepare.setString(2, vReference);
+            prepare.setString(3, vDesignation);
+            prepare.setInt(4, vQuantite);
+            prepare.setDouble(5, vPu);
+            prepare.executeUpdate();
+            bCreation = true;
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Ajout dans la BD non effectué : " 
+                    + e.getMessage(), "Problème rencontré", 
+                    JOptionPane.ERROR_MESSAGE);
+        }
+        return bCreation;
     }
-} catch (SQLException e) {
-    JOptionPane.showMessageDialog(null, "Problème rencontré : "
-        + e.getMessage(),
-        "Résultat", JOptionPane.ERROR_MESSAGE);
-}
-return lesEnreg;
-}
-
-// Recherche 2
-/*public ArrayList<Article> chercherCRUD(String recherche) {
-    String requete = "";
-    requete += "SELECT * ";
-    requete += "FROM articles ";
-    requete += "WHERE code LIKE ’%" + recherche + "%’ ";
-    requete += "OR code_categorie LIKE ’%" + recherche + "%’ ";
-    requete += "OR designation LIKE ’%" + recherche + "%’ ";
-try {
-    Statement state = laConnexion.createStatement();
-    ResultSet rs = state.executeQuery(requete);
-    while (rs.next()) {
-        String code = rs.getString("code");
-        String code_categorie = rs.getString("code_categorie");
-        String designation = rs.getString("designation");
-        int quantite = rs.getInt("quantite");
-        double prix_unitaire = rs.getDouble("prix_unitaire");
-        Date date_creation = rs.getDate("date");
-        lesEnreg.add(new Article(code, code_categorie, designation,
-            quantite, prix_unitaire, date_creation)); 
-    } 
-} catch (SQLException e) {
-    JOptionPane.showMessageDialog(null,
-        "Problème rencontré : "
-        + e.getMessage(),
-        "Résultat", JOptionPane.ERROR_MESSAGE); 
-}
-return lesEnreg;
-}
-
-
-
-
-*/
-
-
-
+    public boolean modifierCRUD(String vCode, String vReference, 
+            String vDesignation, int vQuantite, double vPu) {
+        boolean bModification = true;
+        String requete = null;
+        try {
+            requete = "UPDATE articles SET "
+                    + "code_categorie = ?, "
+                    + "designation = ?, "
+                    + "quantite = ?, "
+                    + "prix_unitaire = ? "
+                    + "WHERE code = ?";
+            PreparedStatement prepare = laConnexion.prepareStatement(requete);
+            prepare.setString(1, vReference);
+            prepare.setString(2, vDesignation);
+            prepare.setInt(3, vQuantite);
+            prepare.setDouble(4, vPu);
+            prepare.setString(5, vCode);
+            prepare.executeUpdate();
+            bModification = true;
+        } catch (SQLException e) {
+            bModification = false;
+            JOptionPane.showMessageDialog(null, "Modification dans la BD non effectuée : "
+                    + e.getMessage(),
+                    "Problème rencontré", JOptionPane.ERROR_MESSAGE);
+        }
+        return bModification;
+    }
+    public boolean supprimerCRUD(String vCode) {
+        boolean bSuppression = true;
+        String requete = null;
+        try {
+            requete = "DELETE FROM articles WHERE code = ?";
+            PreparedStatement prepare = laConnexion.prepareStatement(requete);
+            prepare.setString(1, vCode);
+            int nbEnregSup = prepare.executeUpdate();
+            if (nbEnregSup == 0) {
+                JOptionPane.showMessageDialog(null, "Aucune suppression effectuée dans la BD.",
+                        "Problème rencontré", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (SQLException e) {
+            bSuppression = false;
+            JOptionPane.showMessageDialog(null, "Aucune suppression effectuée dans la BD.",
+                    "Problème rencontré", JOptionPane.ERROR_MESSAGE);
+        }
+        return bSuppression;
+    }
+    public ArrayList<Article> chercherCRUD(String recherche) {
+        String requete = "";
+        requete += "SELECT * ";
+        requete += "FROM articles ";
+        requete += "WHERE code LIKE '%" + recherche + "%' ";
+        requete += "OR code_categorie LIKE '%" + recherche + "%' ";
+        requete += "OR designation LIKE '%" + recherche + "%' ";
+        try {
+            Statement state = laConnexion.createStatement();
+            ResultSet rs = state.executeQuery(requete);
+            while (rs.next()) {
+                String code = rs.getString("code");
+                String code_categorie = rs.getString("code_categorie");
+                String designation = rs.getString("designation");
+                int quantite = rs.getInt("quantite");
+                double prix_unitaire = rs.getDouble("prix_unitaire");
+                Date date_creation = rs.getDate("date");
+                lesEnreg.add(new Article(code, code_categorie, designation, 
+                        quantite, prix_unitaire, date_creation));
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Problème rencontré : "
+                    + e.getMessage(),
+                    "Résultat", JOptionPane.ERROR_MESSAGE);
+        }
+        return lesEnreg;
+    }
+    public ArrayList<Article> chercherRapideCRUD_Articles(String vCode) {
+        String requete = "SELECT * FROM articles WHERE code LIKE '" + vCode + "'";
+        try {
+            Statement state = laConnexion.createStatement();
+            ResultSet rs = state.executeQuery(requete);
+            while (rs.next()) {
+                String code = rs.getString("code");
+                String code_categorie = rs.getString("code_categorie");
+                String designation = rs.getString("designation");
+                int quantite = rs.getInt("quantite");
+                double prix_unitaire = rs.getDouble("prix_unitaire");
+                Date date_creation = rs.getDate("date");
+                lesEnreg.add(new Article(code, code_categorie, designation, 
+                        quantite, prix_unitaire, date_creation));
+            }
+        } catch (SQLException e) {
+            System.out.println("problème avec recupEnregBD()");
+        }
+        return lesEnreg;
+    }
 }
