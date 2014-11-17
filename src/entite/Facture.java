@@ -10,7 +10,7 @@ public class Facture {
     private String code;
     private Client code_client;
     private double total_ttc;
-    // private int codeModeReglement;
+    private int codeModeReglement;
     private ModeReglement mode_reglement;
     private Date date;
     private static Connection laConnexion =
@@ -48,9 +48,9 @@ public class Facture {
     public Date getDate() {
         return date;
     }
-    //public int getCodeModeReglement() {
-    //    return codeModeReglement;
-    //}
+    public int getCodeModeReglement() {
+        return codeModeReglement;
+    }
     public ArrayList<Facture> getLesEnreg() {
         return lesEnreg;
     }

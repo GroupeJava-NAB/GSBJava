@@ -24,7 +24,6 @@ public class FenMenuPrincipal extends javax.swing.JFrame {
         jLab_Facture = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -85,7 +84,6 @@ public class FenMenuPrincipal extends javax.swing.JFrame {
 
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, -1, -1));
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, -1, -1));
 
         setSize(new java.awt.Dimension(948, 630));
         setLocationRelativeTo(null);
@@ -169,6 +167,5 @@ public class FenMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLab_parametres;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
