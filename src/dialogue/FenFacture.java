@@ -1,4 +1,5 @@
-﻿package dialogue;
+package dialogue;
+
 
 import controle.modele.ModeleLigneFacture;
 import entite.*;
@@ -236,10 +237,10 @@ public class FenFacture extends javax.swing.JFrame {
         jLab_TotalTTC.setText("Total : ");
         getContentPane().add(jLab_TotalTTC, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 510, 120, -1));
 
-
         jLab_EtiTotalTTC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gestion/etiquette.png"))); // NOI18N
         jLab_EtiTotalTTC.setToolTipText("");
         getContentPane().add(jLab_EtiTotalTTC, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 500, -1, -1));
+
 
         jBTN_Valider.setText("Valider la facture");
         jBTN_Valider.setToolTipText("");

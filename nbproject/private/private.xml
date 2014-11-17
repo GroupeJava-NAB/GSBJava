@@ -3,7 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Poste8/Desktop/Java-tp/GSBJava/src/controle/modele/ModeleClient.java</file>
+=======
+            <file>file:/C:/Git/GSBJava/src/dialogue/FenArticle.java</file>
+            <file>file:/C:/Git/GSBJava/src/controle/modele/RendererDate.java</file>
+            <file>file:/C:/Git/GSBJava/src/dialogue/TableauBord.java</file>
+            <file>file:/C:/Git/GSBJava/src/controle/modele/RendererBooleen.java</file>
+            <file>file:/C:/Git/GSBJava/src/dialogue/FenFacture.java</file>
+            <file>file:/C:/Git/GSBJava/src/controle/modele/ModeleClient.java</file>
+            <file>file:/C:/Git/GSBJava/src/dialogue/FenStats.java</file>
+            <file>file:/C:/Git/GSBJava/src/dialogue/FenTableFacture.java</file>
+            <file>file:/C:/Git/GSBJava/src/dialogue/FenTableauBord.java</file>
+            <file>file:/C:/Git/GSBJava/src/dialogue/FenTableClient.java</file>
+            <file>file:/C:/Git/GSBJava/src/dialogue/FenChoixClient.java</file>
+            <file>file:/C:/Git/GSBJava/src/dialogue/FenConnexion.java</file>
+>>>>>>> 8a268a72ab93ce5b5827890761991eb5bb6cefb0
         </group>
     </open-files>
 </project-private>
