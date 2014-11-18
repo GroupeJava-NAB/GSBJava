@@ -28,6 +28,8 @@ public class ModeleClient extends AbstractTableModel {
                 return lesDonnees.get(rowIndex).isCarte_Fidele();
             case 4:
                 return lesDonnees.get(rowIndex).getDate_creation();
+            case 5:
+                return lesDonnees.get(rowIndex).getAdresse();
             default:
                 return null;
         }

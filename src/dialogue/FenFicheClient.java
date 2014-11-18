@@ -51,6 +51,9 @@ public class FenFicheClient extends javax.swing.JFrame {
     public void setCheckBox_Carte(boolean bState) {
         checkBox_Carte.setState(bState);
     }
+    public void setjTXT_Adresse(String vAdresse){
+        jTXT_Adresse.setText(vAdresse);
+    }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -210,6 +213,7 @@ public class FenFicheClient extends javax.swing.JFrame {
         boolean bCarteFidele = checkBox_Carte.getState();
         String strDate = jTxT_DateCreation.getText();
         int iCarteFidele;
+        String vAdresse = jTXT_Adresse.getText();
         if (bCarteFidele == true) {
             iCarteFidele = 1;
         } else {
@@ -222,16 +226,17 @@ public class FenFicheClient extends javax.swing.JFrame {
                 Date dtDate = new Date();
                 dtDate = GestionDates.dateJavaEnDateSQL(dtDate);
                 Client leClient = new Client(vCode, vNom,
-                        vPrenom, bCarteFidele, dtDate);
+                        vPrenom, bCarteFidele, dtDate, vAdresse);
                 boolean bCreation = false;
                 bCreation = leClient.creerCRUD(vCode, vNom,
-                        vPrenom, iCarteFidele, strDateMySQL);
+                        vPrenom, iCarteFidele,vAdresse, strDateMySQL);
                 if (bCreation) {
                     leModeleClients.creerMOD(leClient);
                 }
                 jTxTCode.setText("");
                 jTxTNom.setText("");
                 jTxT_Prenom.setText("");
+                jTXT_Adresse.setText("");
                 checkBox_Carte.setState(false);
                 jTxT_DateCreation.setText("");
                 jTxTCode.requestFocus();
@@ -256,10 +261,10 @@ public class FenFicheClient extends javax.swing.JFrame {
                 dtDate = GestionDates
                         .dateJavaEnDateSQL(dtDate);
                 Client leClient = new Client(vCode, vNom,
-                        vPrenom, bCarteFidele, dtDate);
+                        vPrenom, bCarteFidele, dtDate, vAdresse);
                 boolean bCreation = false;
                 bCreation = leClient.modifierCRUD(vCode,
-                        vNom, vPrenom, iCarteFidele, strDate);						
+                        vNom, vPrenom, iCarteFidele, strDate, vAdresse);						
                 if (bCreation) {
                     int numLigne = leModeleClients
                             .getNumLigne(vCode);
@@ -277,6 +282,8 @@ public class FenFicheClient extends javax.swing.JFrame {
                             numLigne, 3);
                     leModeleClients
                             .setValueAt(dtDate, numLigne, 4);
+                    leModeleClients
+                            .setValueAt(vAdresse, numLigne, 5);
                     leModeleClients
                             .modifierMOD(numLigne,
                                          numLigne, leClient);

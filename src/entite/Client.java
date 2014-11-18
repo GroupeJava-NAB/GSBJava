@@ -12,10 +12,14 @@ public class Client {
     private String prenom;
     private boolean carte_fidele;
     private Date date;
+    private String adresse;
     private static Connection laConnexion =
             ControleConnexion.getLaConnectionStatique();
     private final ArrayList<Client> lesEnreg = new ArrayList<>();
 
+    public String getAdresse() {
+        return adresse;
+    }
     public String getCode() {
         return code;
     }
@@ -43,6 +47,9 @@ public class Client {
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
     public void setCarte_fidele(boolean carte_fidele) {
         this.carte_fidele = carte_fidele;
     }
@@ -51,12 +58,13 @@ public class Client {
     }
 
     public Client(String vCode, String vNom, String vPrenom,
-            boolean vCarteFidele, Date vDateCreation) {
+            boolean vCarteFidele, Date vDateCreation, String vAdresse) {
         code = vCode;
         nom = vNom;
         prenom = vPrenom;
         carte_fidele = vCarteFidele;
         date = vDateCreation;
+        adresse = vAdresse;
     }
 
     public Client(String vCode) {
@@ -82,7 +90,7 @@ public class Client {
                         rs.getBoolean("carte_fidele");
                 Date date_creation = rs.getDate("date");
                 lesEnreg.add(new Client(codeJ, nomJ,
-                        prenomJ, carte_fideleJ, date_creation));
+                        prenomJ, carte_fideleJ, date_creation, adresse));
             }
             state.close();
         } catch (SQLException e) {
@@ -93,19 +101,20 @@ public class Client {
     } 
     
     public boolean creerCRUD(String vCode, String vNom,
-            String vPrenom, int vCarte_fidele, String vDate) {
+            String vPrenom, int vCarte_fidele, String vDate, String vAdresse) {
         boolean bCreation = false;
         String requete = null;
         try {
             requete = "INSERT INTO "
-                    + "clients VALUES (?,?,?,?,?)";
+                    + "clients VALUES (?,?,?,?,?,?)";
             PreparedStatement prepare =
                     laConnexion.prepareStatement(requete);
             prepare.setString(1, vCode);
             prepare.setString(2, vNom);
             prepare.setString(3, vPrenom);
             prepare.setInt(4, vCarte_fidele);
-            prepare.setString(5, vDate);
+            prepare.setString(6, vDate);
+            prepare.setString(5, vAdresse);
             prepare.executeUpdate();
             prepare.close();
             bCreation = true;
@@ -119,7 +128,7 @@ public class Client {
     }
     
     public boolean modifierCRUD(String vCode, String vNom,
-            String vPrenom, int vCarte_fidele, String vDate) {
+            String vPrenom, int vCarte_fidele, String vDate, String vAdresse) {
         boolean bCreation = false;
         String requete = null;
         try {
@@ -127,7 +136,8 @@ public class Client {
                     + " nom = ?,"
                     + " prenom = ?,"
                     + " carte_fidele = ?, "
-                    + " date = ?"
+                    + " date = ?,"
+                    + " adresse = ?"
                     + " WHERE code = ?";
             PreparedStatement prepare =
                     laConnexion.prepareStatement(requete);
@@ -136,6 +146,7 @@ public class Client {
             prepare.setInt(3, vCarte_fidele);
             prepare.setString(4, vDate);
             prepare.setString(5, vCode);
+            prepare.setString(6, vAdresse);
             prepare.executeUpdate();
             prepare.close();
             bCreation = true;
@@ -233,9 +244,10 @@ public class Client {
                 String prenomJ = rs.getString("prenom");
                 boolean carte_fideleJ =
                         rs.getBoolean("carte_fidele");
+                String adresseJ = rs.getString("adresse");
                 Date date_creation = rs.getDate("date");
                 lesEnreg.add(new Client(codeJ, nomJ,
-                        prenomJ, carte_fideleJ, date_creation));
+                        prenomJ, carte_fideleJ, date_creation, adresseJ));
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null,
@@ -262,8 +274,9 @@ public class Client {
                 boolean carte_fideleJ =
                         rs.getBoolean("carte_fidele");
                 Date date_creation = rs.getDate("date");
+                String adresseJ = rs.getString("adresse");
                 lesEnreg.add(new Client(codeJ, nomJ, prenomJ,
-                        carte_fideleJ, date_creation));
+                        carte_fideleJ, date_creation, adresseJ));
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null,

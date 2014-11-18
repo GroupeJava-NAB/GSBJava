@@ -21,7 +21,7 @@ public class FenTableClient extends javax.swing.JFrame implements TableModelList
         initComponents();
         table.getColumnModel().getColumn(1).setCellRenderer(new RendererGras());
         table.getColumnModel().getColumn(3).setCellRenderer(new RendererBooleen());
-        table.getColumnModel().getColumn(4).setCellRenderer(new RendererDate());
+        table.getColumnModel().getColumn(4).setCellRenderer(new RendererDate());        
         leModeleClients.addTableModelListener(this);
     }
 
@@ -199,6 +199,11 @@ public class FenTableClient extends javax.swing.JFrame implements TableModelList
         getContentPane().add(jTxTNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 130, 240, -1));
 
         jTXT_Adresse.setEditable(false);
+        jTXT_Adresse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTXT_AdresseActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTXT_Adresse, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, 600, -1));
 
         jTXT_CP.setEditable(false);
@@ -254,8 +259,8 @@ public class FenTableClient extends javax.swing.JFrame implements TableModelList
         jLab_Fond.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fond/fondGeneral.jpg"))); // NOI18N
         getContentPane().add(jLab_Fond, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -100, 1000, 710));
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-1017)/2, (screenSize.height-591)/2, 1017, 591);
+        setSize(new java.awt.Dimension(1017, 591));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMouseClicked
@@ -264,7 +269,7 @@ public class FenTableClient extends javax.swing.JFrame implements TableModelList
         jTxTCode.setText(String.valueOf(table.getValueAt(NumLigne, 0)));
         jTxTNom.setText(String.valueOf(table.getValueAt(NumLigne, 1)));
         jTxT_Prenom.setText(String.valueOf(table.getValueAt(NumLigne, 2)));
-        String stateCarte = String.valueOf(table.getValueAt(NumLigne, 3));
+        String stateCarte = String.valueOf(table.getValueAt(NumLigne, 3));        
         if (stateCarte.equals("true")) {
             checkBox_Carte.setState(true);
         } else {
@@ -275,6 +280,7 @@ public class FenTableClient extends javax.swing.JFrame implements TableModelList
         if (evt.getClickCount() == 2) {
             prepaModification();
         }
+        jTXT_Adresse.setText(String.valueOf(table.getValueAt(NumLigne, 5)));
     }//GEN-LAST:event_tableMouseClicked
 
     private void jLab_AjouterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLab_AjouterMouseClicked
@@ -344,6 +350,10 @@ public class FenTableClient extends javax.swing.JFrame implements TableModelList
 //JasperMySQL_Parametres.apercu("EtatClients.jrxml");
     }//GEN-LAST:event_jLab_AperçuMouseClicked
 
+    private void jTXT_AdresseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTXT_AdresseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTXT_AdresseActionPerformed
+
     private void prepaModification() {
         int NumLigne = -1;
         NumLigne = table.getSelectedRow();
@@ -362,6 +372,7 @@ public class FenTableClient extends javax.swing.JFrame implements TableModelList
             String vPrenom = String.valueOf(table.getValueAt(NumLigne, 2));
             String vCarte = String.valueOf(table.getValueAt(NumLigne, 3));
             String vDate = String.valueOf(table.getValueAt(NumLigne, 4));
+            String vAdresse = String.valueOf(table.getValueAt(NumLigne, 5));
             boolean bCarte = false;
             if (vCarte.equals("true")) {
                 bCarte = true;
@@ -375,6 +386,7 @@ public class FenTableClient extends javax.swing.JFrame implements TableModelList
             laFenetre.setjTxTCode(vCode);
             laFenetre.setjTxTNom(vNom);
             laFenetre.setjTxT_Prenom(vPrenom);
+            laFenetre.setjTXT_Adresse(vAdresse);
             laFenetre.setCheckBox_Carte(bCarte);
             laFenetre.setjTxT_DateCreation(vDate);
             laFenetre.getjTxTCode().setEditable(false);           
