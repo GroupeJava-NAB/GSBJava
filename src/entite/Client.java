@@ -6,10 +6,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
-public class Client {
-    private String code;
-    private String nom;
-    private String prenom;
+public class Client extends Personne{
     private boolean carte_fidele;
     private Date date;
     private String adresse;
@@ -20,15 +17,6 @@ public class Client {
     public String getAdresse() {
         return adresse;
     }
-    public String getCode() {
-        return code;
-    }
-    public String getNom() {
-        return nom;
-    }
-    public String getPrenom() {
-        return prenom;
-    }
     public boolean isCarte_Fidele() {
         return carte_fidele;
     }
@@ -37,15 +25,6 @@ public class Client {
     }
     public ArrayList<Client> getlesEnreg() {
         return lesEnreg;
-    }
-    public void setCode(String code) {
-        this.code = code;
-    }
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
     }
     public void setAdresse(String adresse) {
         this.adresse = adresse;
@@ -59,23 +38,21 @@ public class Client {
 
     public Client(String vCode, String vNom, String vPrenom,
             boolean vCarteFidele, Date vDateCreation, String vAdresse) {
-        code = vCode;
-        nom = vNom;
-        prenom = vPrenom;
+        super(vCode,vNom,vPrenom);
         carte_fidele = vCarteFidele;
         date = vDateCreation;
         adresse = vAdresse;
     }
 
     public Client(String vCode) {
-        code = vCode;
+        super.code = vCode;
     }
     public Client() {
         lireRecupCRUD();
     }
     public Client(String vNom, String vPrenom) {
-        nom = vNom;
-        prenom = vPrenom;
+        super.nom = vNom;
+        super.prenom = vPrenom;
     }
     private void lireRecupCRUD() {
         try {
@@ -286,4 +263,5 @@ public class Client {
         }
         return lesEnreg;
     }
+
 }

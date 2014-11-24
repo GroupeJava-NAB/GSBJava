@@ -1,9 +1,9 @@
 package entite;
 
 public abstract class Personne {
-  String code;
-  String nom;
-  String prenom;
+  protected String code;
+  protected String nom;
+  protected String prenom;
   
   public String getCode() {
     return code;
