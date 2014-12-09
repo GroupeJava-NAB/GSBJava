@@ -3,7 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/LEDBA22/Desktop/GSBjava/GSBJava/src/dialogue/FenTableClient.java</file>
+=======
+            <file>file:/C:/Git/GSBJava/src/entite/Client.java</file>
+            <file>file:/C:/Git/GSBJava/src/entite/Personne.java</file>
+>>>>>>> d1e24381e3a7562e445850baa0c00bf85aa96efe
         </group>
     </open-files>
 </project-private>
