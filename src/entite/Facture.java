@@ -3,7 +3,9 @@ package entite;
 import controle.connection.ControleConnexion;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 
 public class Facture {
@@ -173,5 +175,18 @@ public class Facture {
                     "Résultat", JOptionPane.ERROR_MESSAGE);
         }
         return lesEnreg;
+    }
+    
+    // Affiche les Clients du mois selectionner
+    public ArrayList<Client> afficherClientMois(int mois){
+        ArrayList<Client> listeClient = new ArrayList<Client>();
+        for(Facture uneFacture : lesEnreg){
+          Calendar calendrier = new GregorianCalendar();
+          calendrier.setTime(uneFacture.getDate());                  
+          if(calendrier.get(Calendar.MONTH)+1 == mois){
+              listeClient.add(uneFacture.getCode_client());
+          }  
+        }
+        return listeClient;
     }
 }

@@ -3,17 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Git/GSBJava/src/dialogue/FenArticle.java</file>
-            <file>file:/C:/Git/GSBJava/src/controle/utilitaires/GestionDates.java</file>
-            <file>file:/C:/Git/GSBJava/src/controle/modele/RendererDate.java</file>
-            <file>file:/C:/Git/GSBJava/src/controle/modele/RendererBooleen.java</file>
-            <file>file:/C:/Git/GSBJava/src/controle/modele/ModeleClient.java</file>
-            <file>file:/C:/Git/GSBJava/src/dialogue/FenStats.java</file>
-            <file>file:/C:/Git/GSBJava/src/dialogue/FenTableFacture.java</file>
-            <file>file:/C:/Git/GSBJava/src/dialogue/FenTableauBord.java</file>
-            <file>file:/C:/Git/GSBJava/src/dialogue/FenChoixClient.java</file>
-            <file>file:/C:/Git/GSBJava/src/dialogue/FenConnexion.java</file>
-            <file>file:/C:/Git/GSBJava/src/entite/Categorie.java</file>
+            <file>file:/C:/Git/GSBJava/src/entite/Client.java</file>
+            <file>file:/C:/Git/GSBJava/src/entite/Personne.java</file>
         </group>
     </open-files>
 </project-private>
