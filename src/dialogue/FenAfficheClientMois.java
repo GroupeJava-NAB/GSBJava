@@ -152,23 +152,6 @@ public class FenAfficheClientMois extends javax.swing.JFrame implements TableMod
     }// </editor-fold>//GEN-END:initComponents
 
     private void tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMouseClicked
-        int NumLigne;
-        NumLigne = table.getSelectedRow();
-        jTxTCode.setText(String.valueOf(table.getValueAt(NumLigne, 0)));
-        jTxTNom.setText(String.valueOf(table.getValueAt(NumLigne, 1)));
-        jTxT_Prenom.setText(String.valueOf(table.getValueAt(NumLigne, 2)));
-        String stateCarte = String.valueOf(table.getValueAt(NumLigne, 3));        
-        if (stateCarte.equals("true")) {
-            checkBox_Carte.setState(true);
-        } else {
-            checkBox_Carte.setState(false);
-        }
-        String strDate = String.valueOf(table.getValueAt(NumLigne, 4));
-        jTxT_DateCreation.setText(strDate);
-        if (evt.getClickCount() == 2) {
-            prepaModification();
-        }
-        jTXT_Adresse.setText(String.valueOf(table.getValueAt(NumLigne, 5)));
     }//GEN-LAST:event_tableMouseClicked
 
     private void jLab_AjouterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLab_AjouterMouseClicked
