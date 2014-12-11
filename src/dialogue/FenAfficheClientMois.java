@@ -7,6 +7,9 @@ import controle.modele.RendererBooleen;
 import controle.modele.RendererDate;
 import controle.modele.RendererGras;
 import controle.utilitaires.GestionDates;
+import entite.Client;
+import entite.Facture;
+import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -19,10 +22,12 @@ public class FenAfficheClientMois extends javax.swing.JFrame implements TableMod
     @SuppressWarnings("LeakingThisInConstructor")
     public FenAfficheClientMois() {
         initComponents();
-        table.getColumnModel().getColumn(1).setCellRenderer(new RendererGras());
-        table.getColumnModel().getColumn(3).setCellRenderer(new RendererBooleen());
-        table.getColumnModel().getColumn(4).setCellRenderer(new RendererDate());        
-        leModeleClients.addTableModelListener(this);
+        Facture uneFacture = new Facture();
+        ArrayList<Client> lesClients = uneFacture.afficherClientMois(5);       
+        For(Client unClient : lesClients){
+        
+        
+    }
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
