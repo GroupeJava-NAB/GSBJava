@@ -15,6 +15,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.text.TableView.TableRow;
 
 public class FenAfficheClientMois extends javax.swing.JFrame implements TableModelListener {
     private ModeleClient leModeleClients = new ModeleClient();
@@ -23,11 +25,12 @@ public class FenAfficheClientMois extends javax.swing.JFrame implements TableMod
     public FenAfficheClientMois() {
         initComponents();
         Facture uneFacture = new Facture();
-        ArrayList<Client> lesClients = uneFacture.afficherClientMois(5);       
-        For(Client unClient : lesClients){
+        ArrayList<Client> lesClients = uneFacture.afficherClientMois(5);  
         
-        
-    }
+        for(Client unClient : lesClients){        
+            DefaultTableModel model = (DefaultTableModel) table.getModel();
+            model.addRow(new String[]{unClient.getNom()+","+unClient.getPrenom()});   
+         }
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

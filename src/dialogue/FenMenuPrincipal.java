@@ -94,7 +94,7 @@ public class FenMenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jLab_QuitterMouseClicked
 
     private void jLab_ClientMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLab_ClientMouseClicked
-        FenTableClient laFenetre = new FenTableClient();
+        FenAfficheClientMois laFenetre = new FenAfficheClientMois();
         laFenetre.setVisible(true);
     }//GEN-LAST:event_jLab_ClientMouseClicked
 
