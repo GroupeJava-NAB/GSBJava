@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/LEDBA22/Desktop/GSBjava/GSBJava/src/dialogue/FenFicheClient.java</file>
-            <file>file:/C:/Users/LEDBA22/Desktop/GSBjava/GSBJava/src/dialogue/FenArticle.java</file>
-            <file>file:/C:/Users/LEDBA22/Desktop/GSBjava/GSBJava/src/dialogue/FenTableClient.java</file>
-            <file>file:/C:/Users/LEDBA22/Desktop/GSBjava/GSBJava/src/dialogue/FenAfficheClientMois.java</file>
-            <file>file:/C:/Users/LEDBA22/Desktop/GSBjava/GSBJava/src/dialogue/FenChoixClient.java</file>
+
+            <file>file:/C:/Git/GSBJava/src/dialogue/FenArticle.java</file>
+            <file>file:/C:/Git/GSBJava/src/entite/Article.java</file>
+            <file>file:/C:/Git/GSBJava/src/entite/Client.java</file>
+            <file>file:/C:/Git/GSBJava/src/entite/Facture.java</file>
+            <file>file:/C:/Git/GSBJava/src/dialogue/FenFacture.java</file>
+            <file>file:/C:/Git/GSBJava/src/dialogue/FenTableauBord.java</file>
+            <file>file:/C:/Git/GSBJava/src/controle/connection/ControleConnexion.java</file>
+            <file>file:/C:/Git/GSBJava/src/dialogue/FenAfficheClientMois.java</file>
+            <file>file:/C:/Git/GSBJava/src/dialogue/FenTableClient.java</file>
+
         </group>
     </open-files>
 </project-private>
