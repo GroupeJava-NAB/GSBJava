@@ -22,8 +22,9 @@ public class FenMenuPrincipal extends javax.swing.JFrame {
         jLab_TableauxBord = new javax.swing.JLabel();
         jLab_parametres = new javax.swing.JLabel();
         jLab_Facture = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel_AfficheClientMoisFact = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -68,7 +69,7 @@ public class FenMenuPrincipal extends javax.swing.JFrame {
         getContentPane().add(jLab_TableauxBord, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 230, -1, -1));
 
         jLab_parametres.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accueil/parametre1.png"))); // NOI18N
-        getContentPane().add(jLab_parametres, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 420, -1, -1));
+        getContentPane().add(jLab_parametres, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 420, -1, -1));
 
         jLab_Facture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accueil/classeur1.png"))); // NOI18N
         jLab_Facture.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -78,12 +79,20 @@ public class FenMenuPrincipal extends javax.swing.JFrame {
         });
         getContentPane().add(jLab_Facture, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 240, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fond/fond.jpg"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 580));
-
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, -1, -1));
+
+        jLabel_AfficheClientMoisFact.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accueil/classeur2.png"))); // NOI18N
+        jLabel_AfficheClientMoisFact.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel_AfficheClientMoisFactMouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel_AfficheClientMoisFact, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 420, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fond/fond.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 930, 580));
 
         setSize(new java.awt.Dimension(948, 630));
         setLocationRelativeTo(null);
@@ -115,6 +124,11 @@ public class FenMenuPrincipal extends javax.swing.JFrame {
         tableau.setLocationRelativeTo(tableau.getParent());
         tableau.setVisible(true);
     }//GEN-LAST:event_jLab_TableauxBordMouseClicked
+
+    private void jLabel_AfficheClientMoisFactMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_AfficheClientMoisFactMouseClicked
+        FenAfficheClientMoisFact laFenetre = new FenFacture();
+        laFenetre.setVisible(true);
+    }//GEN-LAST:event_jLabel_AfficheClientMoisFactMouseClicked
 
     /**
      * @param args the command line arguments
@@ -167,5 +181,6 @@ public class FenMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLab_parametres;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel_AfficheClientMoisFact;
     // End of variables declaration//GEN-END:variables
 }
