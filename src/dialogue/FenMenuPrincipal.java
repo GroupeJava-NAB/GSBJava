@@ -23,7 +23,7 @@ public class FenMenuPrincipal extends javax.swing.JFrame {
         jLab_parametres = new javax.swing.JLabel();
         jLab_Facture = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel_AfficheClientMoisFact = new javax.swing.JLabel();
+        jLabel_AfficheClientMoisFac = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -82,19 +82,20 @@ public class FenMenuPrincipal extends javax.swing.JFrame {
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, -1, -1));
 
-        jLabel_AfficheClientMoisFact.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accueil/classeur2.png"))); // NOI18N
-        jLabel_AfficheClientMoisFact.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel_AfficheClientMoisFac.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accueil/classeur2.png"))); // NOI18N
+        jLabel_AfficheClientMoisFac.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLabel_AfficheClientMoisFac.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel_AfficheClientMoisFactMouseClicked(evt);
+                jLabel_AfficheClientMoisFacMouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel_AfficheClientMoisFact, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 420, -1, -1));
+        getContentPane().add(jLabel_AfficheClientMoisFac, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 420, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fond/fond.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 930, 580));
 
-        setSize(new java.awt.Dimension(948, 630));
+        setSize(new java.awt.Dimension(950, 630));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -125,10 +126,10 @@ public class FenMenuPrincipal extends javax.swing.JFrame {
         tableau.setVisible(true);
     }//GEN-LAST:event_jLab_TableauxBordMouseClicked
 
-    private void jLabel_AfficheClientMoisFactMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_AfficheClientMoisFactMouseClicked
-        FenAfficheClientMoisFact laFenetre = new FenFacture();
+    private void jLabel_AfficheClientMoisFacMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_AfficheClientMoisFacMouseClicked
+        FenAfficheClientMoisFac laFenetre = new FenAfficheClientMoisFac();
         laFenetre.setVisible(true);
-    }//GEN-LAST:event_jLabel_AfficheClientMoisFactMouseClicked
+    }//GEN-LAST:event_jLabel_AfficheClientMoisFacMouseClicked
 
     /**
      * @param args the command line arguments
@@ -181,6 +182,6 @@ public class FenMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLab_parametres;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel_AfficheClientMoisFact;
+    private javax.swing.JLabel jLabel_AfficheClientMoisFac;
     // End of variables declaration//GEN-END:variables
 }
