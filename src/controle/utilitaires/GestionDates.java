@@ -11,7 +11,7 @@ public class GestionDates {
     public static String dateEnChaineFR(Date laDate) { 
         // choix de la langue 
         Locale locale = Locale.FRANCE; 
-        // définition du format à utiliser 
+        // dï¿½finition du format ï¿½ utiliser 
         DateFormat dateFormat =  
                 new SimpleDateFormat("dd-MM-yyyy", locale); 
         String date = dateFormat.format(laDate); 
