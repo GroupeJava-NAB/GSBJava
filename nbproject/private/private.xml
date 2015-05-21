@@ -3,9 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Thomas/Desktop/java_tp/GSBJava/src/dialogue/FenConnexion.java</file>
-            <file>file:/C:/Users/Thomas/Desktop/java_tp/GSBJava/src/entite/Facture.java</file>
-            <file>file:/C:/Users/Thomas/Desktop/java_tp/GSBJava/src/entite/Parametres.java</file>
+            <file>file:/C:/Git/GSBJava/src/controle/modele/ComboBoxRenderer.java</file>
+            <file>file:/C:/Git/GSBJava/src/entite/Parametres.java</file>
+            <file>file:/C:/Git/GSBJava/src/dialogue/FenFacture.java</file>
+            <file>file:/C:/Git/GSBJava/src/entite/ModeReglement.java</file>
+            <file>file:/C:/Git/GSBJava/src/testUnitaire/Client.java</file>
+            <file>file:/C:/Git/GSBJava/src/controle/connection/ControleConnexion.java</file>
+            <file>file:/C:/Git/GSBJava/src/entite/Personne.java</file>
+            <file>file:/C:/Git/GSBJava/src/dialogue/FenConnexion.java</file>
+            <file>file:/C:/Git/GSBJava/src/testUnitaire/TestUnitaire.java</file>
         </group>
     </open-files>
 </project-private>
